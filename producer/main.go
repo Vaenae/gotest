@@ -15,9 +15,9 @@ func main() {
 	conn, _ := kafka.DialLeader(context.Background(), "tcp", "localhost:9092", topic, partition)
 	conn.SetWriteDeadline(time.Now().Add(10 * time.Second))
 	conn.WriteMessages(
-		kafka.Message{Value: []byte("one!")},
-		kafka.Message{Value: []byte("two!")},
-		kafka.Message{Value: []byte("three!")},
+		kafka.Message{Value: []byte("111one!")},
+		kafka.Message{Value: []byte("222two!")},
+		kafka.Message{Value: []byte("333three!")},
 	)
 	conn.Close()
 	fmt.Println("Wrote messages")
